@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="timeout.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Marie - Développer informatique</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+</head>
+
+<body>
+    <div id="first_page">
+        <header class="h-full">
+            <h1>Axel Marie </h1>
+            <h2 id="text-container"></h2>
+
+            <script>
+                const textContainer = document.getElementById('text-container');
+                const texts = ["Étudiant developement informatique...", "Passionné de developpement informatique"];
+                let textIndex = 0;
+                let charIndex = 0;
+
+                function typeText() {
+                    if (charIndex < texts[textIndex].length) {
+                        textContainer.innerHTML += texts[textIndex].charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeText, 50);
+                    } else {
+                        setTimeout(eraseText, 1000);
+                    }
+                }
+
+                function eraseText() {
+                    if (charIndex > 0) {
+                        const currentText = textContainer.innerHTML;
+                        textContainer.innerHTML = currentText.substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(eraseText, 50);
+                    } else {
+                        textIndex = (textIndex + 1) % texts.length;
+                        setTimeout(typeText, 500);
+                    }
+                }
+
+                typeText(); 
+            </script>
+        </header>
+
+        <a id="cv" href="Bleu Minimal Infographique CV.pdf"> Télécharger <br> mon CV </a>
+
+
+        <section id="introduction">
+            <p id="intro">Bonjour, je suis Axel Marie, étudiant en développement informatique au CESI d'Hérouville
+                Saint-Clair. Passionné par l'informatique depuis mon enfance,
+                je suis à la recherche d'une entreprise pour poursuivre mes études et réaliser mon objectif à long terme
+                : devenir développeur full stack. Explorez
+                mon portfolio pour découvrir mes compétences et projets.</p>
+        </section>
+        <div class="main">
+
+
+            <div class="nav bottom-nav">
+                <ul id="liste_nav">
+                    <li class="navlink"><a href="#first_page" class="nav-link"><span class="material-symbols-outlined"> home </span></a></li>
+                    <li class="navlink"><a href="#cesi" class="nav-link"><span class="material-symbols-outlined"> school </span></a></li>
+                    <li class="navlink"><a href="#presentation" class="nav-link"><span class="material-symbols-outlined"> person </span></a></li>
+                    <li class="navlink"><a href="#skills" class="nav-link"><span class="material-symbols-outlined"> neurology </span></a></li>
+                    <li class="navlink"><a href="#contact" class="nav-link"><span class="material-symbols-outlined"> mail </span></a></li>
+                </ul>
+                <script>
+var main = document.querySelector('.main');
+var nav = document.querySelector('.nav');
+
+window.onscroll = function () {
+    // Utilisez document.body.offsetHeight pour obtenir la hauteur totale du document
+    if (window.pageYOffset > (document.body.offsetHeight - nav.offsetHeight)) {
+        nav.classList.remove('bottom-nav');
+        nav.classList.add('top-nav');
+    } else {
+        nav.classList.add('bottom-nav');
+        nav.classList.remove('top-nav');
+    }
+};
+
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+    <section id="presentation">
+
+    <div id="container_large_screen">
+
+        <div id="texte">
+            <h3>Qui suis-je ?</h3>
+            <p class="txt_haut">Étudiant en développement informatique au CESI d'Hérouville Saint-Clair, je suis
+                passionné par les concepts de programmation et la maîtrise des langages de
+                programmation. Depuis mon enfance, mon intérêt pour l'informatique a évolué, me conduisant à être
+                constamment à l'affût des dernières avancées technologiques.</p>
+            <br>
+            <p>Mon objectif immédiat est de trouver une entreprise pour poursuivre mes études, avec une vision à long
+                terme de devenir un développeur full stack. Explorez mon
+                portfolio pour découvrir mes compétences ainsi que mes projets concrets qui reflètent ma passion pour le
+                développement informatique.</p>
+        </div>
+        <div id="experiance">
+            <h3>Éxperiance professionnel</h3>
+            <h4>Messagerie Laitière</h4>
+            <p>En parallèle de mes études, j'ai été préparateur de commande à la Messagerie Laitière. Ma responsabilité
+                principale était d'assurer la précision des
+                commandes, développant ainsi des compétences clés telles que le travail d'équipe, l'autonomie, et la
+                patience dans un environnement dynamique.</p>
+            <br>
+            <h4>Mercedes</h4>
+            <p>En septembre 2020, j'ai effectué un stage chez Mercedes, axé sur la mécanique automobile. Mon rôle de
+                stagiaire impliquait la gestion des relations clients
+                et l'entretien des véhicules. Cette expérience m'a permis de développer des compétences dans le domaine
+                de la mécanique automobile et d'acquérir une
+                compréhension pratique du service client au sein d'un environnement professionnel.</p>
+        </div>
+    </div>    
+        <div id="container_exp">
+            <div class="mySlides" id="texte1" class="visible">
+                <h3>Qui suis-je ?</h3>
+                <p class="txt_haut">Étudiant en développement informatique au CESI d'Hérouville Saint-Clair, je suis
+                    passionné par les concepts de programmation et la maîtrise des langages de
+                    programmation. Depuis mon enfance, mon intérêt pour l'informatique a évolué, me conduisant à être
+                    constamment à l'affût des dernières avancées technologiques.</p>
+                <br>
+                <p>Mon objectif immédiat est de trouver une entreprise pour poursuivre mes études, avec une vision à long
+                    terme de devenir un développeur full stack. Explorez mon
+                    portfolio pour découvrir mes compétences ainsi que mes projets concrets qui reflètent ma passion pour le
+                    développement informatique.</p>
+            </div>
+            <div class="mySlides" id="experience1" class="hidden">
+                <h3>Éxperiance professionnel</h3>
+    
+                <h4>Messagerie Laitière</h4>
+                <p>En parallèle de mes études, j'ai été préparateur de commande à la Messagerie Laitière. Ma responsabilité
+                    principale était d'assurer la précision des
+                    commandes, développant ainsi des compétences clés telles que le travail d'équipe, l'autonomie, et la
+                    patience dans un environnement dynamique.</p>
+                <br>
+                <h4>Mercedes</h4>
+                <p>En septembre 2020, j'ai effectué un stage chez Mercedes, axé sur la mécanique automobile. Mon rôle de
+                    stagiaire impliquait la gestion des relations clients
+                    et l'entretien des véhicules. Cette expérience m'a permis de développer des compétences dans le domaine
+                    de la mécanique automobile et d'acquérir une
+                    compréhension pratique du service client au sein d'un environnement professionnel.</p>
+    
+            </div>
+            <div id="nav">
+                <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+            </div>
+            <script>
+                var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length} ;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex-1].style.display = "block";
+        }
+            </script>
+        </div>
+    </section>
+    <section id="cesi">
+        <h3>Programme au CESI: École d'ingénieurs</h3>
+        <ul id="competance">
+            <li class="liste">Analyse des besoins logiciels :
+                <ul>
+                    <li class="description">Capacité à analyser les besoins logiciels de l'entreprise.</li>
+                    <li class="description">Réalisation d'études préliminaires.</li>
+                    <li class="description">Spécification fonctionnelle.</li>
+                    <li class="description">Interconnexion et communication du système d'information.</li>
+                </ul>
+            </li>
+            <li class="liste">Conception d'applications informatiques :
+                <ul>
+                    <li class="description">Maîtrise des bases de la programmation et de l'algorithmique.</li>
+                    <li class="description">Introduction à la modélisation des données.</li>
+                    <li class="description">Capacité à concevoir une application informatique.</li>
+                </ul>
+            </li>
+            <li class="liste">Développement de sites web et d'applications mobiles :
+                <ul>
+                    <li class="description">Compétence dans le développement de sites web et d'applications mobiles.
+                    </li>
+                </ul>
+            </li>
+            <li class="liste">Développement avancé d'applications informatiques :
+                <ul>
+                    <li class="description">Utilisation de l'UML et des design patterns.</li>
+                    <li class="description">Compétence dans le développement applicatif avancé orienté objet.</li>
+                </ul>
+            </li>
+            <li class="liste"> Déploiement et maintenance d'applications informatiques :
+                <ul>
+                    <li class="description">Expérience dans les tests et la recette des applications.</li>
+                    <li class="description">Connaissance des normes et optimisation du code source.</li>
+                    <li class="description">Capacité à déployer et mettre en service des applications.</li>
+                    <li class="description">Compétence dans la maintenance d'applications informatiques.</li>
+                </ul>
+            </li>
+            <li class="liste">Certification des compétences de développeur informatique :
+                <ul>
+                    <li class="description">Compétences en team building et cohésion d'équipe.</li>
+                    <li class="description">Maîtrise de la méthodologie de projet d'entreprise.</li>
+                    <li class="description">Aptitude à la méthodologie des écrits professionnels.</li>
+                    <li class="description">Capacité à argumenter pour convaincre.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="skills">
+        <h3>Skills</h3>
+        <h4>Langages de programmations</h4>
+        <ul id="icon">
+            <li class="logo"><img src="html.svg" alt="html"></li>
+            <li class="logo"><img src="css.svg" alt="css"></li>
+            <li class="logo"><img src="sql.svg" alt="sql"></li>
+        </ul>
+        <ul id="icon1">
+            <li class="logo" id="php"><img src="php.svg" alt="php"></li>
+            <li class="logo"><img src="c.svg" alt="c"></li>
+            <li class="logo"><img src="js.svg" alt="js"></li>
+        </ul>
+        <h4>Soft Skills</h4>
+        <ul id="soft_skills">
+            <li>
+                <ul>
+                    <li>Autonomie</li>
+                    <li>Adaptabilité</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>Patience</li>
+                    <li>Curiosité Technologique</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>Gestion du Stress</li>
+                    <li>Esprit d'Initiative</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="contact">
+
+        <h3>Contactez-moi</h3>
+
+        <form action="traitement.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+
+            <label for="entreprise">Entreprise :</label>
+            <input type="text" id="entreprise" placeholder="Entreprise" name="entreprise" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" placeholder="Email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Message" required></textarea>
+
+            <input type="submit" id="button" value="Envoyer">
+        </form>
+        
+
+    </section>
+
+
+</body>
+
+</html>

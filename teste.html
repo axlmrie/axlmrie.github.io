@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <title>Superposition d'éléments</title>
+</head>
+<body>
+    <div id="container_exp">
+        <div class="mySlides" id="texte" class="visible">
+            <h3>Qui suis-je ?</h3>
+            <p class="txt_haut">Étudiant en développement informatique au CESI d'Hérouville Saint-Clair, je suis
+                passionné par les concepts de programmation et la maîtrise des langages de
+                programmation. Depuis mon enfance, mon intérêt pour l'informatique a évolué, me conduisant à être
+                constamment à l'affût des dernières avancées technologiques.</p>
+            <br>
+            <p>Mon objectif immédiat est de trouver une entreprise pour poursuivre mes études, avec une vision à long
+                terme de devenir un développeur full stack. Explorez mon
+                portfolio pour découvrir mes compétences ainsi que mes projets concrets qui reflètent ma passion pour le
+                développement informatique.</p>
+        </div>
+        <div class="mySlides" id="experience" class="hidden">
+            <h3>Éxperiance professionnel</h3>
+
+            <h4>Messagerie Laitière</h4>
+            <p>En parallèle de mes études, j'ai été préparateur de commande à la Messagerie Laitière. Ma responsabilité
+                principale était d'assurer la précision des
+                commandes, développant ainsi des compétences clés telles que le travail d'équipe, l'autonomie, et la
+                patience dans un environnement dynamique.</p>
+            <br>
+            <h4>Mercedes</h4>
+            <p>En septembre 2020, j'ai effectué un stage chez Mercedes, axé sur la mécanique automobile. Mon rôle de
+                stagiaire impliquait la gestion des relations clients
+                et l'entretien des véhicules. Cette expérience m'a permis de développer des compétences dans le domaine
+                de la mécanique automobile et d'acquérir une
+                compréhension pratique du service client au sein d'un environnement professionnel.</p>
+        </div>
+
+        <!-- Nouvel élément -->
+        <div class="mySlides" id="autreElement" class="hidden">
+            <h3>Autre Élément</h3>
+            <p>Ceci est un autre élément que vous souhaitez afficher ou cacher.</p>
+        </div>
+        <!-- Fin du nouvel élément -->
+
+        <div id="nav">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+
+        <div id="nav">
+            <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+
+        <!-- Boutons pour les nouveaux éléments -->
+        <button class="w3-button" onclick="showElement(1)">Afficher Élément 1</button>
+        <button class="w3-button" onclick="showElement(2)">Afficher Élément 2</button>
+
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }
+
+        // Fonction pour afficher/cacher les nouveaux éléments
+        function showElement(elementNumber) {
+            var elements = document.getElementsByClassName("mySlides");
+            
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = "none";
+            }
+
+            elements[elementNumber - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
